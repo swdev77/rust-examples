@@ -1,0 +1,30 @@
+@BaseUrl = http://localhost:8080
+
+### 
+GET {{BaseUrl}}
+Content-Type: application/json
+
+###
+GET {{BaseUrl}}/health
+Content-Type: application/json
+
+###
+GET {{BaseUrl}}/users
+Content-Type: application/json
+
+###
+GET {{BaseUrl}}/users/2
+Content-Type: application/json
+
+###
+POST {{BaseUrl}}/users
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john.doe.@example.com"
+}
+
+###
+DELETE {{BaseUrl}}/users/2
+Content-Type: application/json
