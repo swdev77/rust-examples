@@ -1,6 +1,6 @@
-use sqlx_firebirdsql::FirebirdConnectOptions;
+use sqlx_firebirdsql::FirebirdPool;
 
 #[derive(Clone)]
-pub struct AppState {
-    pub connect_options: FirebirdConnectOptions,
+pub struct FbState {
+    pub pool: FirebirdPool,
 }

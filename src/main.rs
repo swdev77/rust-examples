@@ -22,10 +22,10 @@ async fn main() {
     let config = config::Config::from_env().unwrap();
     let fb_config = config::FbConfig::from_env().unwrap();
 
-    let fb_connect_options = db::get_fb_connect_options(fb_config);
+    let fb_pool = db::get_fb_pool(fb_config).await;
 
-    let shared_state = state::AppState {
-        connect_options: fb_connect_options,
+    let shared_state = state::FbState {
+        pool: fb_pool     
     };
     
     let addr = format!("{}:{}", config.host, config.port);
